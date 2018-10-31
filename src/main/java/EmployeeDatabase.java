@@ -54,8 +54,8 @@ public class EmployeeDatabase {
      */
     public int countManagersAbove(final Employee employee) {
         int count = 0;
-        if (employee.getManager().equals("")) {
-            count++;
+        if (findManager(employee) == null) {
+            return 0;
         }
         count++;
         countManagersAbove(findManager(employee));
